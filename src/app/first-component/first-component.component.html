@@ -1,0 +1,67 @@
+
+<div class = "main">
+    <!-- <div class = "Register"> -->
+    <form id="Register" method ="post">
+        
+        <h2 id="Registerhead">Register Here</h2>
+        <div class = "Register-contents"> 
+            <label id = "Regcont">First Name :</label>
+            <br>
+            <!-- &nbsp;&nbsp; -->
+            <input type = "text" name = "fname" id="name" placeholder="Enter Your First Name" [(ngModel)]="fname" autocomplete="off" required>
+            <br><br>
+            <label id = "Regcont">Last Name :</label>
+            <br>
+            <!-- &nbsp;&nbsp; -->
+            <input type = "text" name = "lname" id="name" placeholder="Enter Your Last Name" [(ngModel)]="lname" autocomplete="off" required>
+            <br><br>
+            
+        
+            <label id = "Regcont">Mail Id : </label>
+            <br>
+            <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+            <input type = "email" name = "email" id="name" placeholder="Enter Valid Mail-id" [(ngModel)]="email" autocomplete="off" required>  
+            <br><br>
+            
+            
+            <label id = "Regcont">Gender : </label>
+            <br>
+            <input type="radio" name="gender" id="male" [(ngModel)]="gender" autocomplete="off">
+            &nbsp;
+            <span id ="gen">Male</span>
+            &nbsp; &nbsp;
+            <input type="radio" name="gender" id="female" [(ngModel)]="gender" autocomplete="off">
+            &nbsp;
+            <span id ="gen">Female</span>
+            <br><br>
+            <label id = "Regcont">Known Language: </label>
+            <br>
+            <input type="checkbox" name="lang" id="malayalam" [(ngModel)]="language" autocomplete="off">
+            &nbsp;
+            <span id ="Language">Malayalam</span>
+            &nbsp; &nbsp;
+            <input type="checkbox" name="lang" id="english" [(ngModel)]="language" autocomplete="off">
+            &nbsp;
+            <span id ="Language">English</span>
+            &nbsp; &nbsp;
+            <input type="checkbox" name="lang" id="hindi" [(ngModel)]="language" autocomplete="off">
+            &nbsp;
+            <span id ="Language">Hindi</span>
+            <br><br>
+            <input type="submit" value="Submit" name="submit" id = "submit" autocomplete="off">
+        </div>
+    </form>
+    <!-- </div> -->
+</div>
+
+<div class = "submain">
+    <h2 id="Registerhead">Register Info Here</h2>
+    <div class="Form-content">
+        <p id = "see-data"><strong>First Name: </strong>{{}}</p>
+        <p id = "see-data"><strong>Last Name: </strong></p>
+        <p id = "see-data"><strong>Email id: </strong></p>
+        <p id = "see-data"><strong>Gender: </strong></p>
+        <p id = "see-data"><strong>Language: </strong></p>  
+
+    </div>
+</div>
