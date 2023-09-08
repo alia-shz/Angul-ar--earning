@@ -1,7 +1,7 @@
 
 <div class = "main">
     <!-- <div class = "Register"> -->
-    <form id="Register" method ="post">
+    <form id="Register" (ngSubmit)="onsubmit()" >
         
         <h2 id="Registerhead">Register Here</h2>
         <div class = "Register-contents"> 
@@ -26,29 +26,35 @@
             
             <label id = "Regcont">Gender : </label>
             <br>
-            <input type="radio" name="gender" id="male" [(ngModel)]="gender" autocomplete="off">
+            <input type="radio" value="male" [(ngModel)]="gender" autocomplete="off">
             &nbsp;
             <span id ="gen">Male</span>
             &nbsp; &nbsp;
-            <input type="radio" name="gender" id="female" [(ngModel)]="gender" autocomplete="off">
+            <input type="radio" value="female" [(ngModel)]="gender"  autocomplete="off">
             &nbsp;
             <span id ="gen">Female</span>
             <br><br>
             <label id = "Regcont">Known Language: </label>
             <br>
-            <input type="checkbox" name="lang" id="malayalam" [(ngModel)]="language" autocomplete="off">
-            &nbsp;
-            <span id ="Language">Malayalam</span>
-            &nbsp; &nbsp;
-            <input type="checkbox" name="lang" id="english" [(ngModel)]="language" autocomplete="off">
-            &nbsp;
-            <span id ="Language">English</span>
-            &nbsp; &nbsp;
-            <input type="checkbox" name="lang" id="hindi" [(ngModel)]="language" autocomplete="off">
-            &nbsp;
-            <span id ="Language">Hindi</span>
+            <span *ngFor="let item of langlist" >
+
+                <!--(change)="onchange()"-->
+                <input type="checkbox" name={{item.langname}} [(ngModel)]="item.isselected"  autocomplete="off">
+                &nbsp;
+                <span id ="Language">{{item.langname}}      </span>
+                &nbsp; &nbsp;
+                <!-- &nbsp; &nbsp;
+                <input type="checkbox" name={{item.langname}} id="english" autocomplete="off">
+                &nbsp;
+                <span id ="Language">English</span>
+                &nbsp; &nbsp;
+                <input type="checkbox" name={{item.langname}} id="hindi" autocomplete="off">
+                &nbsp;
+                <span id ="Language">Hindi</span> -->
+            
+                </span>
             <br><br>
-            <input type="submit" value="Submit" name="submit" id = "submit" autocomplete="off">
+            <button type="submit" value="Submit" name="submit" id = "submit" autocomplete="off"> Submit </button>
         </div>
     </form>
     <!-- </div> -->
@@ -57,11 +63,12 @@
 <div class = "submain">
     <h2 id="Registerhead">Register Info Here</h2>
     <div class="Form-content">
-        <p id = "see-data"><strong>First Name: </strong></p>
-        <p id = "see-data"><strong>Last Name: </strong></p>
-        <p id = "see-data"><strong>Email id: </strong></p>
-        <p id = "see-data"><strong>Gender: </strong></p>
-        <p id = "see-data"><strong>Language: </strong></p>  
-
+        <p id = "see-data"><strong>First Name: </strong>{{final_user.ufname}}</p>
+        <p id = "see-data"><strong>Last Name: </strong> {{final_user.ulname}}</p>
+        <p id = "see-data"><strong>Email id: </strong>  {{final_user.uemail}}</p>
+        <p id = "see-data"><strong>Gender: </strong>    {{final_user.ugender}}</p>
+        <p id = "see-data"><strong>Language: </strong>  {{final_user.lang_n}}</p>  
     </div>
 </div>
+
+
